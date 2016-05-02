@@ -4,6 +4,9 @@
 #
 #-------------------------------------------------
 
+CONFIG += link_pkgconfig
+PKGCONFIG += libmodbus
+
 QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -13,8 +16,10 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        dialog.cpp
+        dialog.cpp \
+    mod_poller.cpp
 
-HEADERS  += dialog.h
+HEADERS  += dialog.h \
+    mod_poller.h
 
 FORMS    += dialog.ui
