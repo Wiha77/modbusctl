@@ -7,7 +7,7 @@ Dialog::Dialog(QWidget *parent) :
 {
     ui->setupUi(this);
     my_mp=new Mod_poller;
-    my_mp->num_regs=26;
+    my_mp->num_regs=30;
     my_mp->com_port =ui->lineEdit_port->text();
     my_mp->mod_adr=ui->spinBox_adr->value();
 
@@ -16,7 +16,7 @@ Dialog::Dialog(QWidget *parent) :
     QObject::connect(ui->pushButton_start,SIGNAL(clicked()),my_mp , SLOT(start_polling()) );
     QObject::connect(ui->pushButton_stop,SIGNAL(clicked()),my_mp , SLOT(stop_polling()) );
     QObject::connect(ui->pushButton_send,SIGNAL(clicked()),this , SLOT(send_registers()) );
-
+    QObject::connect(ui->spinBox_adr ,SIGNAL(valueChanged(int)),my_mp , SLOT(set_mod_addr(int)) );
 
     QObject::connect(ui->pushButton_kr ,SIGNAL(clicked()),this , SLOT(reset_k()) );
     QObject::connect(ui->pushButton_ks ,SIGNAL(clicked()),this , SLOT(send_k()) );
@@ -81,7 +81,11 @@ Dialog::Dialog(QWidget *parent) :
     "MBReg_PID_MaxPWM",
     "MBReg_PID_MinPWM",
     "MBReg_PID_MaxTurns",
-    "MBReg_PID_MinTurns"};
+    "MBReg_PID_MinTurns",
+    "MBReg_PID_KickTurns",
+    "MBReg_PID_KickPWM",
+    "MBReg_PID_PWM_zerro",
+    "MBReg_PID_PWM_gain"};
     for(int i=0;i<my_mp->num_regs;i++)
     {
     ui->tableWidget->setItem(i,0,new QTableWidgetItem(namreg[i]));

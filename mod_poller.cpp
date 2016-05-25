@@ -1,11 +1,18 @@
 #include "mod_poller.h"
 
+
+
 Mod_poller::Mod_poller(QObject *parent) : QThread(parent)
 {
     mc=0;
     is_conected=false;
     is_polling=false;
 
+}
+
+void Mod_poller::set_mod_addr(int val)
+{
+ mod_adr=val;
 }
 
 void Mod_poller::ConnectComPort()

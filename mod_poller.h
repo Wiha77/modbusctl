@@ -31,6 +31,8 @@ public slots:
         void start_polling(void);
         void stop_polling(void);
         void send_reg(int reg_adr, int val );
+        void set_mod_addr(int val);
+
 private:
 
 
