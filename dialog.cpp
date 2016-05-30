@@ -7,7 +7,7 @@ Dialog::Dialog(QWidget *parent) :
 {
     ui->setupUi(this);
     my_mp=new Mod_poller;
-    my_mp->num_regs=30;
+    my_mp->num_regs=18;
     my_mp->com_port =ui->lineEdit_port->text();
     my_mp->mod_adr=ui->spinBox_adr->value();
 
@@ -57,35 +57,25 @@ Dialog::Dialog(QWidget *parent) :
     ui->tableWidget->setColumnCount(2);
 
     const char * namreg[]={"MBReg_AdrrModbus",
-    "MBReg_proporc",
-    "MBReg_integral",
-    "MBReg_diferencial",
-    "MBReg_K_proporc",
-    "MBReg_K_integral",
-   "MBReg_K_diferencial",
-    "MBReg_PIDMaxErr",
-    "MBReg_MaxCurrent",
-    "MBReg_TimeMaxCurrent",
-    "MBReg_CommandFlags",
-    "MBReg_StateFlags",
-    "MBReg_NumberOfTurns",
-    "MBReg_MotorSpeedPWM" ,
-    "MBReg_MotorSpeed",
-    "MBReg_PIDrp",
-    "MBReg_Sensor_Up",
-    "MBReg_Densor_Imotor",
-    "MBReg_TempDS18B20",
-    "MBReg_SonarData",
-    "MBReg_Cur_zero_offset",
-    "MBReg_Cur_gain",
-    "MBReg_PID_MaxPWM",
-    "MBReg_PID_MinPWM",
-    "MBReg_PID_MaxTurns",
-    "MBReg_PID_MinTurns",
-    "MBReg_PID_KickTurns",
-    "MBReg_PID_KickPWM",
-    "MBReg_PID_PWM_zerro",
-    "MBReg_PID_PWM_gain"};
+                           "MBReg_CommandFlags",
+                           "MBReg_StateFlags",
+                           "MBReg_Sensor_Up",
+                           "MBReg_Densor_Imotor",
+                           "MBReg_Cur_zero_offset",
+                           "MBReg_Cur_gain",
+                           "MBReg_CardsData_0",
+                           "MBReg_CardsData_1",
+                           "MBReg_CardsData_2",
+                           "MBReg_CardsData_3",
+                           "MBReg_CardsData_4",
+                           "MBReg_CardsData_5",
+                           "MBReg_CardsData_6",
+                           "MBReg_CardsData_7",
+                           "MBReg_CardsData_8",
+                           "MBReg_CardsData_9",
+                           "MBReg_CardsData_10"
+
+                          };
     for(int i=0;i<my_mp->num_regs;i++)
     {
     ui->tableWidget->setItem(i,0,new QTableWidgetItem(namreg[i]));
@@ -117,7 +107,7 @@ void Dialog::get_registers(void)
    regs++;
 
    }
-   regs=my_mp->buf+10;
+   regs=my_mp->buf+1;
    ui->checkBox_k0->setChecked(*regs & 0x01);
    ui->checkBox_k1->setChecked(*regs & 0x02);
    ui->checkBox_k2->setChecked(*regs & 0x04);
@@ -130,7 +120,7 @@ void Dialog::get_registers(void)
    ui->checkBox_k9->setChecked(*regs & 0x0200);
    ui->checkBox_k10->setChecked(*regs & 0x0400);
    ui->checkBox_k11->setChecked(*regs & 0x0800);
-   regs=my_mp->buf+11;
+   regs=my_mp->buf+2;
    ui->checkBox_f0->setChecked(*regs & 0x01);
    ui->checkBox_f1->setChecked(*regs & 0x02);
    ui->checkBox_f2->setChecked(*regs & 0x04);
@@ -182,7 +172,7 @@ void Dialog::send_k(void)
     val|=ui->checkBox_k1->isChecked(); val=val<<1;
     val|=ui->checkBox_k0->isChecked();
 
-    my_mp->send_reg(10, val);
+    my_mp->send_reg(1, val);
 
 
 }
@@ -221,7 +211,7 @@ void Dialog::send_f(void)
     val|=ui->checkBox_f0->isChecked();
 
 
- my_mp->send_reg(11, val);
+ my_mp->send_reg(2, val);
 
 }
 

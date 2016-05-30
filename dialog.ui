@@ -248,63 +248,63 @@
     <item>
      <widget class="QCheckBox" name="checkBox_f0">
       <property name="text">
-       <string>Motor</string>
+       <string>Door</string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QCheckBox" name="checkBox_f1">
       <property name="text">
-       <string>StopOverCurrent</string>
+       <string>Gate</string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QCheckBox" name="checkBox_f2">
       <property name="text">
-       <string>StopIfD1</string>
+       <string>ifCard</string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QCheckBox" name="checkBox_f3">
       <property name="text">
-       <string>StopIfD2</string>
+       <string> </string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QCheckBox" name="checkBox_f4">
       <property name="text">
-       <string>StopIfD3</string>
+       <string> </string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QCheckBox" name="checkBox_f5">
       <property name="text">
-       <string>StopIfNumberTurns</string>
+       <string> </string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QCheckBox" name="checkBox_f6">
       <property name="text">
-       <string>D1</string>
+       <string> </string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QCheckBox" name="checkBox_f7">
       <property name="text">
-       <string>D2</string>
+       <string> </string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QCheckBox" name="checkBox_f8">
       <property name="text">
-       <string>D3</string>
+       <string> </string>
       </property>
      </widget>
     </item>
@@ -318,14 +318,14 @@
     <item>
      <widget class="QCheckBox" name="checkBox_f10">
       <property name="text">
-       <string>Direction</string>
+       <string> </string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QCheckBox" name="checkBox_f11">
       <property name="text">
-       <string>NoTurns</string>
+       <string> </string>
       </property>
      </widget>
     </item>
@@ -358,70 +358,70 @@
     <item>
      <widget class="QCheckBox" name="checkBox_k0">
       <property name="text">
-       <string>stop</string>
+       <string>Door</string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QCheckBox" name="checkBox_k1">
       <property name="text">
-       <string>ForvardPUSK</string>
+       <string>Gate</string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QCheckBox" name="checkBox_k2">
       <property name="text">
-       <string>BackPUSK</string>
+       <string>Light</string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QCheckBox" name="checkBox_k3">
       <property name="text">
-       <string>StopIfD1</string>
+       <string> </string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QCheckBox" name="checkBox_k4">
       <property name="text">
-       <string>StopIfD2</string>
+       <string> </string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QCheckBox" name="checkBox_k5">
       <property name="text">
-       <string>StopIfD3</string>
+       <string> </string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QCheckBox" name="checkBox_k6">
       <property name="text">
-       <string>StopIfNumberTurns</string>
+       <string> </string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QCheckBox" name="checkBox_k7">
       <property name="text">
-       <string>Izm_DS18B20</string>
+       <string> </string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QCheckBox" name="checkBox_k8">
       <property name="text">
-       <string>Izm_Sonar</string>
+       <string> </string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QCheckBox" name="checkBox_k9">
       <property name="text">
-       <string>OffPID</string>
+       <string> </string>
       </property>
      </widget>
     </item>
@@ -467,7 +467,7 @@
     <number>65535</number>
    </property>
    <property name="value">
-    <number>100</number>
+    <number>2</number>
    </property>
   </widget>
   <widget class="QLabel" name="label">
